@@ -1,6 +1,7 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 
+// MovieComponent component to render a list of movie cards
 const MovieComponent = ({ movieInfo }) => {
   // Filter out null or undefined values from movieInfo
   const validMovieInfo = movieInfo.filter((curVal) => curVal !== null && curVal !== undefined);
@@ -9,6 +10,7 @@ const MovieComponent = ({ movieInfo }) => {
     <div className="wrapper">
       <div className="container">
         <div className="flex flex-wrap -mx-4">
+          {/* Map through valid movie info to render movie cards */}
           {validMovieInfo.map((curVal, id) => {
             // Check if any required field in curVal is null or undefined
             if (
@@ -23,6 +25,7 @@ const MovieComponent = ({ movieInfo }) => {
             ) {
               return null; // Skip rendering this job card if any required field is null
             }
+            // Render MovieCard component for each valid movie data
             return <MovieCard key={id} myData={curVal} />;
           })}
         </div>
@@ -31,4 +34,4 @@ const MovieComponent = ({ movieInfo }) => {
   );
 };
 
-export default MovieComponent;
+export default MovieComponent; // Export MovieComponent component
