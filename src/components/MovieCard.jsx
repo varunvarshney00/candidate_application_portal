@@ -1,4 +1,6 @@
 import React from "react";
+import { Badge } from "@/components/ui/badge";
+import { CloudLightningIcon } from "lucide-react";
 
 const MovieCard = ({ myData }) => {
   const {
@@ -18,22 +20,24 @@ const MovieCard = ({ myData }) => {
     <div className="w-full sm:w-1/2 lg:w-1/3 px-14 mb-4 mt-10 relative">
       <div className="bg-white border border-gray-200 rounded-3xl shadow-md flex flex-col h-full transform transition-transform duration-300 hover:scale-105 transition-timing-function ease-in-out">
         <div className="p-4 flex-grow">
-          <div className="flex items-center justify-between mb-2">
-            <p className="text-gray-500 text-sm">Posted 10 days ago</p>
+          <div className="flex items-center justify-between mb-4">
+            <Badge variant="variant">Posted 12 days ago</Badge>
           </div>
           <div className="flex items-center mb-4">
+            <CloudLightningIcon className="h-10 w-10 text-orange-500 mr-2" />
             <div>
               <p className="text-gray-500 text-sm">Company Name</p>
               <h3 className="font-semibold">
-                {jobRole && jobRole.substr(0, 10)}
+                {jobRole && jobRole.charAt(0).toUpperCase() + jobRole.slice(1)}
               </h3>
               <p className="text-sm text-gray-500">
-                {location && location.substr(0, 20)}
+                {location &&
+                  location.charAt(0).toUpperCase() + location.slice(1)}
               </p>
             </div>
           </div>
           <div className="flex items-center justify-start mb-4">
-            <p className="font-semibold">
+            <p className="text-sm font-medium text-green-600">
               Estimated Salary: ₹{minJdSalary} - {maxJdSalary} LPA
             </p>
             <svg
@@ -57,12 +61,12 @@ const MovieCard = ({ myData }) => {
             <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent dark:from-gray-950 dark:to-transparent" />
           </div>
           <div className="pl-4 pr-4 pb-4">
-          <div className="flex items-center justify-center">
-            <a href={jdLink} className="text-blue-600">
-              View job
-            </a>
+            <div className="flex items-center justify-center">
+              <a href={jdLink} className="text-blue-600">
+                View job
+              </a>
+            </div>
           </div>
-        </div>
           <div>
             <p className="text-sm">Minimum Experience</p>
             <p className="font-semibold">{minExp}</p>

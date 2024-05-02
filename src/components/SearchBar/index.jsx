@@ -18,7 +18,7 @@ const SearchBar = ({ onFilterChange }) => {
           <option value="" disabled hidden selected>
             Roles
           </option>
-          <option value="Backend" className="text-black">
+          <option value="Backend" className="text-gray-400">
             Backend
           </option>
           <option value="Frontend" className="text-black">
