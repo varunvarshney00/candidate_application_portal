@@ -326,7 +326,8 @@ const SearchBar = ({ onFilterChange }) => {
         type="text"
         placeholder="Search..."
         className="w-60 py-3 pl-4 font-semibold rounded-md border border-gray-300 focus:outline-none focus:ring focus:ring-blue-200"
-        onChange={(event) => onFilterChange("search", event.target.value)} // Add onChange event handler for search
+        onChange={handleChange} // Update search filter when input changes
+        name="search" // Name of the filter
       />
     </div>
   );
