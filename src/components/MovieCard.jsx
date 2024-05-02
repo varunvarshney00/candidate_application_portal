@@ -8,17 +8,17 @@ const MovieCard = ({ myData }) => {
       <div className="bg-white border border-gray-200 rounded-3xl shadow-md flex flex-col h-full transform transition-transform duration-300 hover:scale-105 transition-timing-function ease-in-out">
         <div className="p-4 flex-grow">
           <div className="flex items-center justify-between mb-2">
-            <p className="text-gray-500 text-sm">Company Name</p>
+            <p className="text-gray-500 text-sm">Posted 10 days ago</p>
           </div>
           <div className="flex items-center mb-4">
             <div>
+                <p className="text-gray-500 text-sm">Company Name</p>  
               <h3 className="font-semibold">{jobRole && jobRole.substr(0, 10)}</h3>
               <p className="text-sm text-gray-500">{location && location.substr(0, 20)}</p>
-              <p>Location</p>
             </div>
           </div>
           <div className="flex items-center justify-start mb-4">
-            <p className="font-semibold">Estimated Salary: ₹18 - 35 LPA</p>
+            <p className="font-semibold">Estimated Salary: ₹{minJdSalary} - {maxJdSalary} LPA</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 text-green-500"
@@ -36,9 +36,7 @@ const MovieCard = ({ myData }) => {
             <h4>About Company:</h4>
             <h4 className="font-bold mb-2">About us</h4>
             <p className="text-sm">
-              A summary of the movie plot could go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              scelerisque sem ac mauris eleifend, non tempus enim faucibus. Aenean vehicula suscipit urna, nec
-              condimentum nulla fermentum nec. Phasellus at ligula a felis imperdiet vestibulum.
+              {jobDetailsFromCompany}
             </p>
             <div className="flex items-center justify-center">
               <a href="#" className="text-blue-600">
@@ -48,7 +46,7 @@ const MovieCard = ({ myData }) => {
           </div>
           <div>
             <p className="text-sm">Minimum Experience</p>
-            <p className="font-semibold">2 years</p>
+            <p className="font-semibold">{minExp}</p>
           </div>
         </div>
         <div className="pl-4 pr-4 pb-4">
