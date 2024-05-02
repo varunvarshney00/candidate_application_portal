@@ -8,28 +8,42 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   const getCardData = async () => {
-    const res = await fetch(
-      `https://jsonplaceholder.typicode.com/posts?_limit=9&_page=${page}`
-    );
-    const data = await res.json();
-    console.log(data);
-    setCard((prev) => [...prev, ...data]);
-    setLoading(false);
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+      "limit": 10,
+      "offset": (page - 1) * 10
+    });
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw
+    };
+
+    try {
+      const response = await fetch("https://api.weekday.technology/adhoc/getSampleJdJSON", requestOptions);
+      const data = await response.json();
+      console.log(data);
+      if (data && data.jdList) {
+        setCard((prev) => [...prev, ...data.jdList]);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     getCardData();
   }, [page]);
 
-  const handelInfiniteScroll = async () => {
-    // console.log("scrollHeight" + document.documentElement.scrollHeight);
-    // console.log("innerHeight" + window.innerHeight);
-    // console.log("scrollTop" + document.documentElement.scrollTop);
+  const handleInfiniteScroll = () => {
     try {
-      if (
-        window.innerHeight + document.documentElement.scrollTop + 1 >=
-        document.documentElement.scrollHeight
-      ) {
+      const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
+      if (window.innerHeight + scrollTop + 1 >= scrollHeight) {
         setLoading(true);
         setPage((prev) => prev + 1);
       }
@@ -39,8 +53,8 @@ const Home = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handelInfiniteScroll);
-    return () => window.removeEventListener("scroll", handelInfiniteScroll);
+    window.addEventListener("scroll", handleInfiniteScroll);
+    return () => window.removeEventListener("scroll", handleInfiniteScroll);
   }, []);
 
   return (

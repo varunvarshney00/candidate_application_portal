@@ -1,21 +1,19 @@
-// import React from "react";
+import React from "react";
 
 const MovieCard = ({ myData }) => {
-  const { title, body, id } = myData;
+  const { jdLink, jdUid, jobDetailsFromCompany, jobRole, location, maxExp, maxJdSalary, minExp, minJdSalary, salaryCurrencyCode } = myData;
+
   return (
     <div className="w-full sm:w-1/2 lg:w-1/3 px-14 mb-4 mt-10">
       <div className="bg-white border border-gray-200 rounded-3xl shadow-md flex flex-col h-full transform transition-transform duration-300 hover:scale-105 transition-timing-function ease-in-out">
-        {/* Added transition-timing-function */}
         <div className="p-4 flex-grow">
           <div className="flex items-center justify-between mb-2">
-            <p className="text-gray-500 text-sm">ID: {id}</p>
+            <p className="text-gray-500 text-sm">Company Name</p>
           </div>
           <div className="flex items-center mb-4">
             <div>
-              <h3 className="font-semibold">{title.substr(0, 10)}</h3>
-              <p className="text-sm text-gray-500">
-                Description: {body.substr(0, 20)}
-              </p>
+              <h3 className="font-semibold">{jobRole && jobRole.substr(0, 10)}</h3>
+              <p className="text-sm text-gray-500">{location && location.substr(0, 20)}</p>
               <p>Location</p>
             </div>
           </div>
@@ -38,13 +36,11 @@ const MovieCard = ({ myData }) => {
             <h4>About Company:</h4>
             <h4 className="font-bold mb-2">About us</h4>
             <p className="text-sm">
-              Flex Wash is an operating system for the car wash industry. Our
-              solutions help owners manage their operations and grow revenue. Our
-              POS has a built-in CRM, allowing car washes to take advantage of
-              their customer transaction history in order to funnel customers
-              into subscriptions and higher margin wash packages..
+              A summary of the movie plot could go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              scelerisque sem ac mauris eleifend, non tempus enim faucibus. Aenean vehicula suscipit urna, nec
+              condimentum nulla fermentum nec. Phasellus at ligula a felis imperdiet vestibulum.
             </p>
-            <div className="flex items-center justify-center mt-2">
+            <div className="flex items-center justify-center">
               <a href="#" className="text-blue-600">
                 View job
               </a>
@@ -52,16 +48,12 @@ const MovieCard = ({ myData }) => {
           </div>
           <div>
             <p className="text-sm">Minimum Experience</p>
-            <p className="font-semibold">{id} years</p>
+            <p className="font-semibold">2 years</p>
           </div>
         </div>
         <div className="pl-4 pr-4 pb-4">
           <button className="w-full bg-green-500 text-white  py-2 rounded-md hover:bg-green-600 transition duration-300 flex items-center justify-center">
-            <img
-              src="https://img.icons8.com/fluency/48/flash-on.png"
-              alt="Flash On"
-              className="mr-2 w-4 h-4"
-            />
+            <img src="https://img.icons8.com/fluency/48/flash-on.png" alt="Flash On" className="mr-2 w-4 h-4" />
             Easy Apply
           </button>
           <button className="w-full bg-blue-500 text-white mt-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">
