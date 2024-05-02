@@ -4,6 +4,7 @@ const MovieCard = ({ myData }) => {
   const { jdLink, jdUid, jobDetailsFromCompany, jobRole, location, maxExp, maxJdSalary, minExp, minJdSalary, salaryCurrencyCode } = myData;
 
   return (
+    
     <div className="w-full sm:w-1/2 lg:w-1/3 px-14 mb-4 mt-10">
       <div className="bg-white border border-gray-200 rounded-3xl shadow-md flex flex-col h-full transform transition-transform duration-300 hover:scale-105 transition-timing-function ease-in-out">
         <div className="p-4 flex-grow">
