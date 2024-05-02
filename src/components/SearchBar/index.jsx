@@ -10,15 +10,16 @@ const SearchBar = ({ onFilterChange }) => {
   return (
     <div className="flex gap-4 my-10 justify-center px-10">
       <select
-        className="w-48 py-3 pl-4 font-semibold rounded-md"
+        className="w-48 py-3 pl-4 font-semibold rounded-md "
         name="role"
         onChange={handleChange}
+        style={{ color: 'gray' }}
       >
         <optgroup label="ENGINEERING" style={{ color: "lightgrey" }}>
           <option value="" disabled hidden selected>
             Roles
           </option>
-          <option value="Backend" className="text-gray-400">
+          <option value="Backend" className="text-black">
             Backend
           </option>
           <option value="Frontend" className="text-black">
@@ -202,6 +203,7 @@ const SearchBar = ({ onFilterChange }) => {
         className="w-56 py-3 pl-4 font-semibold rounded-md"
         name="numberOfEmployees"
         onChange={handleChange}
+        style={{ color: 'gray' }}
       >
         <option value="" disabled hidden selected>
           Number of Employees
@@ -233,6 +235,7 @@ const SearchBar = ({ onFilterChange }) => {
         className="w-40 py-3 pl-4 font-semibold rounded-md"
         name="experience"
         onChange={handleChange}
+        style={{ color: 'gray' }}
       >
         <option value="Experience" disabled hidden selected>
           Experience
@@ -273,6 +276,7 @@ const SearchBar = ({ onFilterChange }) => {
         className="w-32 py-3 pl-4 font-semibold rounded-md"
         name="remote"
         onChange={handleChange}
+        style={{ color: 'gray' }}
       >
         <option value="" disabled hidden selected>
           Remote
@@ -292,6 +296,7 @@ const SearchBar = ({ onFilterChange }) => {
         className="w-60 py-3 pl-4 font-semibold rounded-md"
         name="minSalary"
         onChange={handleChange}
+        style={{ color: 'gray' }}
       >
         <option value="" disabled hidden selected>
           Minimum Base Pay Salary
