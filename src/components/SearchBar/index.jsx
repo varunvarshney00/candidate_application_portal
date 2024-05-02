@@ -10,7 +10,7 @@ const SearchBar = ({ onFilterChange }) => {
   return (
     <div className="flex flex-wrap justify-center gap-4 my-10 px-4 sm:px-10">
       <select
-        className=" white-textbox w-full sm:w-48 py-3 pl-4 font-semibold rounded-md "
+        className=" bg-white w-full sm:w-48 py-3 pl-4 font-semibold rounded-md "
         name="role"
         onChange={handleChange}
         style={{ color: 'gray' }}
@@ -200,7 +200,7 @@ const SearchBar = ({ onFilterChange }) => {
       </select>
 
       <select
-        className="white-textbox w-full sm:w-56 py-3 pl-4 font-semibold rounded-md"
+        className="bg-white w-full sm:w-56 py-3 pl-4 font-semibold rounded-md"
         name="numberOfEmployees"
         onChange={handleChange}
         style={{ color: 'gray' }}
@@ -232,7 +232,7 @@ const SearchBar = ({ onFilterChange }) => {
       </select>
 
       <select
-        className="white-textbox w-full sm:w-40 py-3 pl-4 font-semibold rounded-md"
+        className="bg-white w-full sm:w-40 py-3 pl-4 font-semibold rounded-md"
         name="experience"
         onChange={handleChange}
         style={{ color: 'gray' }}
@@ -273,7 +273,7 @@ const SearchBar = ({ onFilterChange }) => {
       </select>
 
       <select
-        className="white-textbox w-full sm:w-32 py-3 pl-4 font-semibold rounded-md"
+        className="bg-white w-full sm:w-32 py-3 pl-4 font-semibold rounded-md"
         name="remote"
         onChange={handleChange}
         style={{ color: 'gray' }}
@@ -293,7 +293,7 @@ const SearchBar = ({ onFilterChange }) => {
       </select>
 
       <select
-        className="white-textbox w-full sm:w-60 py-3 pl-4 font-semibold rounded-md"
+        className="bg-white w-full sm:w-60 py-3 pl-4 font-semibold rounded-md"
         name="minSalary"
         onChange={handleChange}
         style={{ color: 'gray' }}
@@ -330,7 +330,7 @@ const SearchBar = ({ onFilterChange }) => {
       <input
         type="text"
         placeholder="Search..."
-        className="white-textbox py-3 pl-4 font-semibold  rounded-md border border-gray-300 focus:outline-none focus:ring focus:ring-blue-200"
+        className="bg-white py-3 pl-4 font-semibold  rounded-md border border-gray-300 focus:outline-none focus:ring focus:ring-blue-200"
         onChange={handleChange} // Update search filter when input changes
         name="search" // Name of the filter
       />
